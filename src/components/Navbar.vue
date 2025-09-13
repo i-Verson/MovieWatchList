@@ -7,15 +7,24 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import Menubar from 'primevue/menubar';
+import { useRouter } from 'vue-router';
+
+const router = useRouter();
 
 const items = ref([
     {
         label: 'Home',
-        icon: 'pi pi-home'
+        icon: 'pi pi-home',
+        command: () => {
+            router.push('/Home');
+        }
     },
     {
         label: 'Movies',
-        icon: 'pi pi-video'
+        icon: 'pi pi-video',
+        command: () => {
+            router.push('/Movies');
+        }
     },
     {
         label: 'Genres',
